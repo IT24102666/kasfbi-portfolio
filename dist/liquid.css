@@ -1,0 +1,50 @@
+/* Shared clear-glass surfaces use the artwork and light pools behind each page. */
+:root {
+  --pane: linear-gradient(142deg,rgba(255,255,255,.15),rgba(255,255,255,.025) 38%,rgba(112,192,215,.06) 80%,rgba(254,196,228,.13));
+  --edge: 1px solid rgba(248,224,246,.32);
+  --shine: inset 0 1px 1px #ffffff68,inset 0 -1px 2px #ffbad32e,0 10px 30px #07041338;
+}
+body {
+  background: radial-gradient(ellipse at 90% 12%, #51304e,transparent 52%),radial-gradient(ellipse at 4% 82%,#1b4550,transparent 52%),#171020;
+  background-attachment:fixed;
+}
+.landing>header {position:absolute;z-index:3;top:14px;left:0;right:0;background:transparent;border:0}
+.landing .navwrap,.interior>nav,.hero-text,.glass,.motion,.connect,.archive,.interior .card,.btn,.repo,.chip,.badge-preview,.award-tools,.award,dialog {
+  background:var(--pane);border:var(--edge);box-shadow:var(--shine);
+  -webkit-backdrop-filter:blur(14px) saturate(1.32);backdrop-filter:blur(14px) saturate(1.32);
+}
+.landing .navwrap,.interior>nav {border-radius:100px;padding:0 22px;height:57px;background-color:#1b132b58}
+.landing .navwrap{width:min(94%,1510px)}.landing nav a{color:#f6eef8}
+.hero{height:clamp(650px,45vw,800px)}.hero-inner{padding-top:64px}
+.hero-text{border-radius:32px 42px 34px 30px;padding:clamp(22px,2.4vw,46px);margin-top:0;max-width:min(64%,760px);background-color:#1b14281a;backdrop-filter:blur(5px) saturate(1.1)}
+.hero-text h1{font-size:clamp(74px,7vw,136px);margin:14px 0 18px}
+.primary,.interior .btn.primary {background:linear-gradient(172deg,#fff7 0%,#ffacc083 22%,#ff78a36b 56%,#ffb4d29c),#ff80a8;border:1px solid #ffe1f3bf;box-shadow:inset 1px 2px 3px #fff9,inset 0 -3px 6px #bd337853,0 4px 20px #fe639333;color:#291523}
+.cardtext{right:12px;left:12px;bottom:12px;padding:10px 44px 10px 14px;border-radius:15px;border:var(--edge);background:linear-gradient(130deg,#33253588,#20172444);box-shadow:var(--shine);backdrop-filter:blur(10px)}
+.plus{bottom:24px;right:24px}.badge-preview{border-radius:28px;padding:clamp(20px,3vw,45px);margin-bottom:46px;display:flex;align-items:center;justify-content:space-between;gap:18px}.badge-preview h2{margin:8px 0 15px}.badge-preview .archive{width:fit-content}.badge-strip{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.badge-strip img{width:clamp(55px,6.5vw,105px);height:auto;display:block}
+.interior>nav{margin:15px auto 0}.interior main{padding-bottom:40px}.interior .lead{position:relative}.interior h1,.interior h2,.award h3{font-family:Cond,Impact,'Arial Narrow',sans-serif}
+@font-face{font-family:Cond;src:url(assets/cond.ttf);font-display:swap}
+.interior .card,.award{border-radius:24px}.interior .card{background-color:#1c172429}.interior .portrait img{border:var(--edge);box-shadow:var(--shine)}
+.award-tools{display:flex;flex-wrap:wrap;gap:15px;padding:15px 20px;border-radius:20px}
+.award-tools label{display:grid;gap:4px;font-size:.86rem;color:#f1dfea;flex:1;min-width:min(100%,170px)}
+.award-tools select,.award-tools input{font:inherit;color:#fff;background:#211b2e9e;border:1px solid #ffffff50;border-radius:10px;min-height:44px;padding:0 12px}
+.award-tools option{background:#201927}.award-tools input::placeholder{color:#d4c5d0}.award-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,295px),1fr));gap:14px}
+.award{padding:22px;display:flex;align-items:flex-start;gap:16px}.award h3{font-size:1.45rem;letter-spacing:-.025em}.award p{margin:6px 0;color:#eee0ec;font-size:.88rem}.award .overline{margin:0 0 7px;color:#a5f2e9;font-size:.78rem;font-weight:700;line-height:1.3}.award a{color:#ffbbd5;text-decoration:underline;text-underline-offset:4px;font-size:.9rem}.award img{width:66px;height:66px;object-fit:contain;flex:none}.docicon{flex:none;border:var(--edge);border-radius:12px;display:grid;place-items:center;width:43px;height:48px;color:#ffd0e2;font-size:1.8rem;background:linear-gradient(130deg,#ffffff24,#ffafca0a)}[hidden]{display:none!important}
+#count{font-size:.9rem;color:#f2e2ef}.credential-lead{padding-bottom:24px}
+@keyframes liquidPress{0%{scale:1}30%{scale:1.055 .92}60%{scale:.982 1.05}85%{scale:1.01 .99}100%{scale:1}}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  body:not(.paused) :is(.btn,.archive,.repo,.motion,.badge-strip a,.connect,.glass,.primary):hover{animation:liquidPress .52s ease both}
+}
+@media(max-width:780px){
+  .landing .navwrap{height:auto;min-height:54px;padding:8px 15px;gap:8px}
+  .landing nav{gap:11px}.landing nav a{font-size:.78rem}.landing nav .current:after{bottom:-4px}
+  .hero{height:690px}.hero-text{max-width:100%;padding:20px 17px;border-radius:24px}.hero-text h1{font-size:clamp(54px,10.3vw,84px)}.hero-inner{padding-bottom:64px;align-items:end}
+  .badge-preview{display:grid}.interior>nav{height:auto;min-height:54px;padding:10px 16px}
+}
+@media(max-width:520px){
+  .landing .navwrap{width:96%}.landing .navwrap .connect{font-size:0;gap:0;padding:8px}.landing .navwrap .connect .in{font-size:13px}
+  .hero{height:700px}.hero-inner{width:93%}.hero .scene{background-size:auto 76%;background-position:83% 30px}
+  .hero-text p{line-height:1.45}.hero-text .actions>*{padding:11px 13px}
+  .sectionheading h2{font-size:38px}.sectionheading .archive{font-size:11px}
+}
+.paused *{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
